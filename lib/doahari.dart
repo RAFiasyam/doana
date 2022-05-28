@@ -2,6 +2,7 @@ import 'package:doana/datall.dart';
 import 'package:doana/detailscr.dart';
 import 'package:doana/home_menu.dart';
 import 'package:doana/service.dart';
+import 'package:doana/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -32,9 +33,7 @@ class DoaHari extends StatelessWidget {
                             child: ListTile(
                               title: Text(batang.doa, style: TextStyle(color: Color(0xFFFFFFFF)),),
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return DetailScreen(batang);
-                                }));
+                                Navigator.push(context, customRoute(DetailScreen(batang)));
                               },
                             ),
                           ),

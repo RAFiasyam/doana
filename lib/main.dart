@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 20),
               child: TextButton(
-                child: Text('Get Started'),
+                child: Text('Yuk Baca Doa!'),
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.only(left: 100, right: 100,top: 10, bottom: 10),
                   primary: Colors.white,
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       PageRouteBuilder(
-                          transitionDuration: const Duration(seconds: 1),
+                          transitionDuration: const Duration(seconds: 4),
                           transitionsBuilder: (BuildContext context,
                               Animation<double> animation,
                               Animation<double> secAnimation,

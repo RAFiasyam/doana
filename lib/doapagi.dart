@@ -1,5 +1,6 @@
 import 'package:doana/datapagi.dart';
 import 'package:doana/detailscr.dart';
+import 'package:doana/utils.dart';
 import 'package:flutter/material.dart';
 
 class DoaPagi extends StatelessWidget {
@@ -24,14 +25,11 @@ class DoaPagi extends StatelessWidget {
                       child: ListTile(
                         title: Text(dataDoaPagi[index].doa, style: TextStyle(color: Color(0xFFFFFFFF)),),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return DetailScreen(dataDoaPagi[index]);
-                          }));
+                          Navigator.push(context, customRoute(DetailScreen(dataDoaPagi[index])));
                         },
                       ),
                     ),
                   );
-
                 },
                 itemCount: dataDoaPagi.length,
               ),

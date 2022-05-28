@@ -1,5 +1,6 @@
 import 'package:doana/datapetang.dart';
 import 'package:doana/detailscr.dart';
+import 'package:doana/utils.dart';
 import 'package:flutter/material.dart';
 
 class DoaPetang extends StatelessWidget {
@@ -26,10 +27,8 @@ class DoaPetang extends StatelessWidget {
                       child: ListTile(
                         title: Text(dataDoaPetang[index].doa, style: TextStyle(color: Color(0xFFFFFFFF)),),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return DetailScreen(dataDoaPetang[index]);
-                          }));
-                        },
+                          Navigator.push(context, customRoute(DetailScreen(dataDoaPetang[index])));
+                          }
                       ),
                     ),
                   );
