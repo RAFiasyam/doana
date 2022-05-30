@@ -1,3 +1,4 @@
+import 'package:doana/hadistscr.dart';
 import 'package:doana/home.dart';
 import 'package:flutter/material.dart';
 
@@ -44,36 +45,72 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: const EdgeInsets.only(bottom: 20),
-              child: TextButton(
-                child: Text('Yuk Baca Doa!'),
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.only(left: 100, right: 100,top: 10, bottom: 10),
-                  primary: Colors.white,
-                  backgroundColor: Colors.black,
-                  onSurface: Colors.black,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                          transitionDuration: const Duration(seconds: 4),
-                          transitionsBuilder: (BuildContext context,
-                              Animation<double> animation,
-                              Animation<double> secAnimation,
-                              Widget child) {
-                            animation = CurvedAnimation(
-                                parent: animation, curve: Curves.elasticOut);
-                            return ScaleTransition(
-                                scale: animation,
-                                alignment: Alignment.center,
-                                child: child);
-                          },
-                          pageBuilder: (BuildContext context,
-                              Animation<double> animation,
-                              Animation<double> secAnimation) {
-                            return Home();
-                          }));
-                },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextButton(
+                    child: Text('Yuk Baca Doa!'),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 100, right: 100,top: 10, bottom: 10),
+                      primary: Colors.white,
+                      backgroundColor: Colors.black,
+                      onSurface: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              transitionDuration: const Duration(seconds: 4),
+                              transitionsBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation,
+                                  Widget child) {
+                                animation = CurvedAnimation(
+                                    parent: animation, curve: Curves.elasticOut);
+                                return ScaleTransition(
+                                    scale: animation,
+                                    alignment: Alignment.center,
+                                    child: child);
+                              },
+                              pageBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation) {
+                                return Home();
+                              }));
+                    },
+                  ),
+                  TextButton(
+                    child: Text('Hadits-hadits '),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 100, right: 100,top: 10, bottom: 10),
+                      primary: Colors.white,
+                      backgroundColor: Colors.black,
+                      onSurface: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              transitionDuration: const Duration(seconds: 4),
+                              transitionsBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation,
+                                  Widget child) {
+                                animation = CurvedAnimation(
+                                    parent: animation, curve: Curves.elasticOut);
+                                return ScaleTransition(
+                                    scale: animation,
+                                    alignment: Alignment.center,
+                                    child: child);
+                              },
+                              pageBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secAnimation) {
+                                return HadistScreen();
+                              }));
+                    },
+                  ),
+                ],
               ),
             ),
           )
